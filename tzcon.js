@@ -29,7 +29,6 @@ function run(){
 	"use strict"; //burn evil javascript, burn!
 	var times,time,i;
 	//Remove the warning about no javascript conversion, as we know this library is valid.
-	alert("Internet explorer is fuckeing stupid" + document.readyState);
 	document.querySelector(".tzutcwarning").remove();
 	//This library doesn't support anything fancy with mutations adding times.
 	//I have no need, but PR welcome for this.
