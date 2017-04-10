@@ -21,21 +21,25 @@ Note: You have javascript disabled. Thus, all dates and times are indicated in t
 ## Example HTML page
 
 ```html
-blah blah blah HTML bloat crap
-In the head:
-<script type="text/javascript" src="path-to-tzcon.js"></script>
-</head>
-<body>
+<html>
+  <head>
+	<title>Test of the timezone converter, as seen in the readme.</title>
+	<script type="text/javascript" src="tzcon.js"></script>
+  </head>
+  <body>
 
 blah blah blah
 <p class="tzutcwarning">
 Note: You have javascript disabled. Thus, all dates and times are indicated in the UTC timezone. Enable javascript to receive friendly conversion of dates to your local timezone.
 </p>
 <h2> Why you should eat chocolate</h2>
-<p> Chocolate, chocolate, come learn all about chocolate with alice and bob, at <span class="tzcon">5 Jun 2018 00:00</span></p>
+<p> Chocolate, chocolate, come learn all about chocolate with alice and bob, at <span class="tzcon">5 Jun 2018 00:00 -0000</span></p>
 <h2> The future of AI</h2>
 <p> Come learn from Victor and jane about AI at <span class="tzcon">30 Dec 2199 21:34:18 -0000</span>. Since We'll all be superhuman by then, this talk will end at <span class="tzcon">30 Dec 2199 21:34:19 -0000</span>.</p>
-Blah blah blah blah blah
+<h2>Invalid usage of the library.</h2>
+<p>Come learn how to become a champion in chess at <span class="tzcon">5 jan 2048 -0700</span></p>
+</body>
+</html>
 ```
 
 ## Get in touch
