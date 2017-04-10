@@ -21,6 +21,10 @@ window.addEventListener("load", function(){
 		var dateStr = time.innerText.trim();
 		if(!dateStr.search(/\d{4}/))
 			dateStr += " -0000";
-		time.innerText = new Date(dateStr).toLocaleString();
+		var date = new Date(dateStr);
+		if(date.getYear() === NaN)
+			time.innerText = "invalid date";
+		else
+			time.innerText = date.toLocaleString();
 	}
 });
