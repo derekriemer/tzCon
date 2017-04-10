@@ -8,10 +8,28 @@
 	* See the file LICENSE for more details.
 	*/
 
-window.addEventListener("load", function(){
+// from:https://github.com/jserz/js_piece/blob/master/DOM/ChildNode/remove()/remove().md
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('remove')) {
+      return;
+    }
+    Object.defineProperty(item, 'remove', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function remove() {
+        this.parentNode.removeChild(this);
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+
+function run(){
 	"use strict"; //burn evil javascript, burn!
 	var times,time,i;
 	//Remove the warning about no javascript conversion, as we know this library is valid.
+	alert("Internet explorer is fuckeing stupid" + document.readyState);
 	document.querySelector(".tzutcwarning").remove();
 	//This library doesn't support anything fancy with mutations adding times.
 	//I have no need, but PR welcome for this.
@@ -27,4 +45,13 @@ window.addEventListener("load", function(){
 		else
 			time.innerText = date.toLocaleString();
 	}
-});
+}
+
+function load(){
+	
+	if(document.readyState === 'complete')
+		run();
+	else
+		document.addEventListener("readystatechange", load);
+}
+document.addEventListener("readystatechange", load);
